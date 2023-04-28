@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Chairperson {
+public class Chairperson extends Faculty {
     private List<Course> coursesOffered;
     private Map<String, ConcentrationGroup> concentrations;
     private List<Faculty> fullTimeFaculty;
@@ -13,7 +13,8 @@ public class Chairperson {
     private Faculty graduateAdvisor;
     private Faculty undergraduateAdvisor;
 
-    public Chairperson() {
+    public Chairperson(String name, Department department) {
+    	super(name, department);
         coursesOffered = new ArrayList<>();
         concentrations = new HashMap<>();
         fullTimeFaculty = new ArrayList<>();

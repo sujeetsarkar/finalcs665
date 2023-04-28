@@ -5,16 +5,18 @@ import java.util.List;
 
 class Student implements Observer {
     private String name;
-    private List<ConcreteCourse> coursesEnrolled = new ArrayList<>();
+    private List<Course> coursesEnrolled = new ArrayList<>();
     private Department department;
+    private String email;
     
-    public Student(String name, Department department) {
+    public Student(String name, String email, Department department) {
         this.name = name;
         this.department = department;
+        this.email = email;
         department.registerObserver(this);
     }
     
-    public void enrollCourse(ConcreteCourse course) {
+    public void enrollCourse(Course course) {
         coursesEnrolled.add(course);
         department.notifyObservers();
     }
@@ -22,14 +24,68 @@ class Student implements Observer {
     @Override
     public void update(ComputerScienceDepartment department) {
         // Check for updates related to courses enrolled
-        List<ConcreteCourse> updatedCourses = new ArrayList<>();
-        for (ConcreteCourse course : coursesEnrolled) {
+        List<Course> updatedCourses = new ArrayList<>();
+        for (Course course : coursesEnrolled) {
             if (department.getCoursesOffered().contains(course)) {
                 updatedCourses.add(course);
             }
         }
         coursesEnrolled = updatedCourses;
     }
-    
-    // Other student-related methods
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the coursesEnrolled
+	 */
+	public List<Course> getCoursesEnrolled() {
+		return coursesEnrolled;
+	}
+
+	/**
+	 * @param coursesEnrolled the coursesEnrolled to set
+	 */
+	public void setCoursesEnrolled(List<Course> coursesEnrolled) {
+		this.coursesEnrolled = coursesEnrolled;
+	}
+
+	/**
+	 * @return the department
+	 */
+	public Department getDepartment() {
+		return department;
+	}
+
+	/**
+	 * @param department the department to set
+	 */
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
 }

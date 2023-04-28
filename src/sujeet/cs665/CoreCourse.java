@@ -8,8 +8,8 @@ package sujeet.cs665;
  *
  */
 public class CoreCourse extends ConcreteCourse {
-    public CoreCourse(String title, String description, String syllabus) {
-        super(title, description, syllabus);
+    public CoreCourse(String title, String description, String syllabus, int erollmentLimit) {
+        super(title, description, syllabus, erollmentLimit);
     }
 
     public String getFormat() {

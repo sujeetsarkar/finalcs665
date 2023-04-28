@@ -17,9 +17,9 @@ public class ComputerScienceDepartment implements Concentration, Department {
     private UndergraduateAdvisor undergradAdvisor;
     private List<Observer> observers = new ArrayList<>();
 
-    private ComputerScienceDepartment(String name, String description) {
-    	this.name = name;
-        this.description = description;
+    private ComputerScienceDepartment() {
+    	this.name = "Computer Science Department";
+        this.description = "Desctiption of computer science department";
         concentrations = new ArrayList<>();
         this.coursesOffered = new ArrayList<>();
         this.students = new ArrayList<>();
@@ -37,10 +37,18 @@ public class ComputerScienceDepartment implements Concentration, Department {
     public List<Faculty> getFaculty() {
         return faculty;
     }
+    
+    public Chairperson getChairperson() {
+    	return chairperson;
+    }
+    
+    public void addChairperson(Chairperson chairperson) {
+    	this.chairperson = chairperson;
+    }
 
     public static Department getInstance() {
         if (instance == null) {
-            instance = new ComputerScienceDepartment("","");
+            instance = new ComputerScienceDepartment();
         }
         return instance;
     }

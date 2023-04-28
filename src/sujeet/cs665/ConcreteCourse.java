@@ -4,14 +4,16 @@ public class ConcreteCourse implements Concentration, Course {
 	private String title;
     private String description;
     private String syllabus;
+    private int maxEnrollmentLimit;
 
-    public ConcreteCourse(String title, String description, String syllabus) {
+    public ConcreteCourse(String title, String description, String syllabus, int maxEnrollmentLimit) {
         this.title = title;
         this.description = description;
         this.syllabus = syllabus;
+        this.maxEnrollmentLimit = maxEnrollmentLimit;
     }
 
-    public String getTitle() {
+    public String getName() {
         return title;
     }
 

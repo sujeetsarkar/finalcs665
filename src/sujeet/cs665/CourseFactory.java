@@ -8,5 +8,5 @@ package sujeet.cs665;
  *
  */
 public interface CourseFactory {
-    public Course createCourse(String title, String description, String syllabus);
+    public Course createCourse(String title, String description, String syllabus, int erollmentLimit);
 }

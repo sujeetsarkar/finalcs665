@@ -3,9 +3,10 @@ package sujeet.cs665;
 public class CourseProxy implements Course {
     private ConcreteCourse course;
     private String formattedContent;
+    private int maxEnrollmentLimit;
 
-    public CourseProxy(String title, String description, String syllabus) {
-        this.course = new ConcreteCourse(title, description, syllabus);
+    public CourseProxy(String title, String description, String syllabus, int maxEnrollmentLimit) {
+        this.course = new ConcreteCourse(title, description, syllabus, maxEnrollmentLimit);
     }
 
     @Override
