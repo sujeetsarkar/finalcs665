@@ -73,7 +73,7 @@ public class ComputerScienceDepartment implements Concentration, Department {
     public void addStudent(Student student) {
         students.add(student);
     	System.out.println("Student " + student.getName() + " added to department "+ name);
-        notifyObservers();
+//        notifyObservers();
     }
 
     public void addFaculty(Faculty faculty) {
@@ -91,7 +91,7 @@ public class ComputerScienceDepartment implements Concentration, Department {
             undergradAdvisor = (UndergraduateAdvisor) faculty;
             System.out.println(faculty.getName() + " added as UndergraduateAdvisor.");
         }
-        notifyObservers();
+//        notifyObservers();
     }
     
     @Override
@@ -105,9 +105,9 @@ public class ComputerScienceDepartment implements Concentration, Department {
     }
 
     @Override
-    public void notifyObservers() {
+    public void notifyObservers(String message) {
         for (Observer observer : observers) {
-            observer.update(this);
+            observer.update(message);
         }
     }
     

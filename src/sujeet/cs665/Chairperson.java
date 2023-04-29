@@ -1,5 +1,8 @@
 package sujeet.cs665;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Chairperson extends Faculty {
 	private String name;
 	private Course courseTaught;
@@ -13,4 +16,14 @@ public class Chairperson extends Faculty {
     	courseTaught = course;
         System.out.println("Course " + course.getTitle() + " assigned to chairman " + name);
     }
+    
+
+	@Override
+	public void update(String message) {
+//		List<Course> updatedCourses = new ArrayList<>();
+//        for (Course course : this.coursesTaught) {
+//        	
+//        }
+		System.out.println(message);
+	}
 }

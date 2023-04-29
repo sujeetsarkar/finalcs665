@@ -17,22 +17,23 @@ class Student implements Observer {
     }
     
     public void enrollCourse(Course course) {
-    	CourseProxy courseProxy = new CourseProxy(course.getTitle(), course.getDescription(), course.getSyllabus(), course.getMaxEnrollmentLimit());
-        coursesEnrolled.add(course);
-        courseProxy.enrollStudent(this);
-        department.notifyObservers();
+    	coursesEnrolled.add(course);
+    	CourseProxy courseProxy = new CourseProxy(course.getTitle(), course.getDescription(), course.getSyllabus(), course.getMaxEnrollmentLimit(), course.getDepartment());
+    	courseProxy.enrollStudent(this);
+//        department.notifyObservers();
     }
     
     @Override
-    public void update(ComputerScienceDepartment department) {
+    public void update(String message) {
+		System.out.println(message);
         // Check for updates related to courses enrolled
-        List<Course> updatedCourses = new ArrayList<>();
-        for (Course course : coursesEnrolled) {
-            if (department.getCoursesOffered().contains(course)) {
-                updatedCourses.add(course);
-            }
-        }
-        coursesEnrolled = updatedCourses;
+//        List<Course> updatedCourses = new ArrayList<>();
+//        for (Course course : coursesEnrolled) {
+//            if (department.getCoursesOffered().contains(course)) {
+//                updatedCourses.add(course);
+//            }
+//        }
+//        coursesEnrolled = updatedCourses;
     }
 
 	/**

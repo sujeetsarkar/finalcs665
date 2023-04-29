@@ -10,12 +10,18 @@ public class ConcentrationGroup implements Concentration, Course {
     private String description;
 	private List<Concentration> subConcentrations;
 	private List<Concentration> concentrations;
+	private Department department;
 
-    public ConcentrationGroup(String name, String description) {
+    public ConcentrationGroup(String name, String description, Department department) {
         this.name = name;
         this.description = description;
+        this.department = department;
         concentrations = new ArrayList<>();
         subConcentrations = new ArrayList<>();
+    }
+    
+    public Department getDepartment() {
+    	return department;
     }
 
     public void addConcentration(Concentration concentration) {

@@ -33,19 +33,20 @@ public class Faculty implements Observer {
     
     public void addCourseTaught(Course course) {
         coursesTaught.add(course);
-        department.notifyObservers();
+//        department.notifyObservers();
     }
     
     public void addAdvisingStudent(Student student) {
         advisingStudents.add(student);
-        department.notifyObservers();
+//        department.notifyObservers();
     }
 
 	@Override
-	public void update(ComputerScienceDepartment department) {
-		List<Course> updatedCourses = new ArrayList<>();
-        for (Course course : this.coursesTaught) {
-        	
-        }
+	public void update(String message) {
+//		List<Course> updatedCourses = new ArrayList<>();
+//        for (Course course : this.coursesTaught) {
+//        	
+//        }
+		System.out.println(message);
 	}
 }

@@ -21,10 +21,10 @@ public class MainApp {
         csDepartment.addFaculty(fullTimeFaculty2);
 
         // Create a course
-        Course course1 = new CourseProxy("CS101", "Introduction to Python", "CS101 Syallabus", 10);
-        Course course2 = new CourseProxy("CS102", "Introduction to Java", "CS102 Syallabus", 5);
-        Course course3 = new CourseProxy("CS103", "Introduction to C++", "CS103 Syallabus", 4);
-        Course course4 = new CourseProxy("CS104", "Introduction to .Net", "CS104 Syallabus", 6);
+        Course course1 = new CourseProxy("CS101", "Introduction to Python", "CS101 Syallabus", 10, csDepartment);
+        Course course2 = new CourseProxy("CS102", "Introduction to Java", "CS102 Syallabus", 5, csDepartment);
+        Course course3 = new CourseProxy("CS103", "Introduction to C++", "CS103 Syallabus", 4, csDepartment);
+        Course course4 = new CourseProxy("CS104", "Introduction to .Net", "CS104 Syallabus", 6, csDepartment);
         csDepartment.addCourse(course1);
         csDepartment.addCourse(course2);
         csDepartment.addCourse(course3);
@@ -63,14 +63,25 @@ public class MainApp {
 
         // Enroll a student in the course
         student1.enrollCourse(course1);
+        student1.enrollCourse(course1);
+        student1.enrollCourse(course1);
+        student1.enrollCourse(course1);
+        student1.enrollCourse(course1);
+        student1.enrollCourse(course1);
+        student1.enrollCourse(course1);
+        student1.enrollCourse(course1);
+        student1.enrollCourse(course1);
+        student1.enrollCourse(course1);
+        student1.enrollCourse(course1);
+        student1.enrollCourse(course1);
         // The chairperson should not be notified because the enrollment limit has not been reached
 
         // Enroll more students in the course until the enrollment limit is reached
         // The chairperson should be notified because the enrollment limit has been reached
 
         // Waitlist a student for the course
-        Student student3 = new Student("Bob Smith", "bs789", csDepartment);
-        csDepartment.addStudent(student3);
+//        Student student3 = new Student("Bob Smith", "bs789", csDepartment);
+//        csDepartment.addStudent(student3);
 //        student3.waitlistForCourse(course1);
 
         // Drop a student from the course
