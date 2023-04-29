@@ -11,7 +11,8 @@ public class ComputerScienceDepartment implements Concentration, Department {
     private static Department instance;
     private List<Course> coursesOffered;
     private List<Student> students;
-    private List<Faculty> faculty;
+    private List<Faculty> fulltimeFaculty;
+    private List<Faculty> parttimeFaculty;
     private Faculty chairperson;
     private GraduateAdvisor gradAdvisor;
     private UndergraduateAdvisor undergradAdvisor;
@@ -23,7 +24,8 @@ public class ComputerScienceDepartment implements Concentration, Department {
         concentrations = new ArrayList<>();
         this.coursesOffered = new ArrayList<>();
         this.students = new ArrayList<>();
-        this.faculty = new ArrayList<>();
+        this.fulltimeFaculty = new ArrayList<>();
+        this.parttimeFaculty = new ArrayList<>();
     }
     
     public List<Course> getCoursesOffered() {
@@ -34,8 +36,17 @@ public class ComputerScienceDepartment implements Concentration, Department {
         return students;
     }
     
-    public List<Faculty> getFaculty() {
-        return faculty;
+    public List<Faculty> getFullTimeFaculty() {
+        return fulltimeFaculty;
+    }
+    public Faculty getGradAdvisor() {
+    	return gradAdvisor;
+    }
+    public Faculty getUndergradAdvisor() {
+    	return undergradAdvisor;
+    }
+    public List<Faculty> parttimeFaculty() {
+        return parttimeFaculty;
     }
     
     public Faculty getChairperson() {
@@ -56,21 +67,30 @@ public class ComputerScienceDepartment implements Concentration, Department {
 
     public void addCourse(Course course) {
     	coursesOffered.add(course);
+    	System.out.println("Course " + course.getTitle() + " added to department "+ name);
     }
 
     public void addStudent(Student student) {
         students.add(student);
+    	System.out.println("Student " + student.getName() + " added to department "+ name);
         notifyObservers();
     }
 
     public void addFaculty(Faculty faculty) {
-        this.faculty.add(faculty);
+    	if(faculty.getFacultyStatus()) {
+    		this.fulltimeFaculty.add(faculty);
+            System.out.println("Fulltime Faculty " + faculty.getName()  + " added to " + faculty.getDepartment().getTitle());
+    	} else {
+    		this.parttimeFaculty.add(faculty);
+            System.out.println("Parttime Faculty " + faculty.getName()  + " added to " + faculty.getDepartment().getTitle());
+    	}
         if (faculty instanceof GraduateAdvisor) {
             gradAdvisor = (GraduateAdvisor) faculty;
+            System.out.println(faculty.getName() + " added as GraduateAdvisor.");
         } else if (faculty instanceof UndergraduateAdvisor) {
             undergradAdvisor = (UndergraduateAdvisor) faculty;
+            System.out.println(faculty.getName() + " added as UndergraduateAdvisor.");
         }
-        System.out.println("Faculty" + faculty.getName()  + " added to " + faculty.getDepartment().getTitle());
         notifyObservers();
     }
     

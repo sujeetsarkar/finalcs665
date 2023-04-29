@@ -7,8 +7,8 @@ public class UndergraduateAdvisor extends Faculty {
 
     private List<Student> advisees;
 
-    public UndergraduateAdvisor(String name, Department department) {
-        super(name, department);
+    public UndergraduateAdvisor(String name, Department department, boolean status) {
+        super(name, department, status);
         advisees = new ArrayList<>();
     }
 

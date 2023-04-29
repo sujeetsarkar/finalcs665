@@ -14,7 +14,7 @@ public class Chairperson extends Faculty {
     private Faculty undergraduateAdvisor;
 
     public Chairperson(String name, Department department) {
-    	super(name, department);
+    	super(name, department, Boolean.TRUE); // Chairperson will always be fulltime
         coursesOffered = new ArrayList<>();
         concentrations = new HashMap<>();
         fullTimeFaculty = new ArrayList<>();

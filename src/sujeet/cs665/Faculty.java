@@ -5,13 +5,17 @@ import java.util.List;
 
 public class Faculty implements Observer {
 	private String name;
-    private List<Course> coursesTaught = new ArrayList<>();
-    private List<Student> advisingStudents = new ArrayList<>();
+    private List<Course> coursesTaught;
+    private List<Student> advisingStudents;
     private Department department;
+    private boolean facultyStatus; // 1 - Fulltime , 0 - PartTime
     
-    public Faculty(String name, Department department) {
+    public Faculty(String name, Department department, boolean facultyStatus) {
         this.name = name;
         this.department = department;
+        this.facultyStatus = facultyStatus;
+        this.coursesTaught = new ArrayList<>();
+        this.advisingStudents = new ArrayList<>();
         department.registerObserver(this);
     }
     
@@ -23,9 +27,12 @@ public class Faculty implements Observer {
     	return department;
     }
     
+    public boolean getFacultyStatus() {
+    	return facultyStatus;
+    }
+    
     public void addCourseTaught(Course course) {
         coursesTaught.add(course);
-        System.out.println("Faculty");
         department.notifyObservers();
     }
     
