@@ -52,7 +52,7 @@ public class MainApp {
         Department csDepartment = ComputerScienceDepartment.getInstance();
 
         // Create a chairperson for the department
-        Chairperson chairperson = new Chairperson("Dr. Smith", csDepartment);
+        Faculty chairperson = new Chairperson("Dr. Smith", csDepartment);
         csDepartment.addChairperson(chairperson);
 
         // Create some faculty for the department
@@ -62,8 +62,8 @@ public class MainApp {
         csDepartment.addFaculty(faculty2);
 
         // Create a course
-        Course course1 = new CourseProxy("CS101", "Introduction to Computer Science", "Test Syallabus", 3); //, 10, csDepartment
-        chairperson.addCourse(course1);
+        Course course1 = new CourseProxy("CS101", "Introduction to Computer Science", "Test Syallabus", 10); //, 10, csDepartment
+        chairperson.addCourseTaught(course1);
         csDepartment.addCourse(course1);
 
         // Create some students
@@ -87,10 +87,10 @@ public class MainApp {
         // Waitlist a student for the course
         Student student3 = new Student("Bob Smith", "bs789", csDepartment);
         csDepartment.addStudent(student3);
-        student3.waitlistForCourse(course1);
+//        student3.waitlistForCourse(course1);
 
         // Drop a student from the course
-        student1.dropCourse(course1);
+//        student1.dropCourse(course1);
         // The waitlisted student should be enrolled in the course
         // The chairperson should not be notified because the enrollment limit has not been reached
 	}

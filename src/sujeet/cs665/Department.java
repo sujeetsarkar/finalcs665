@@ -7,5 +7,6 @@ public interface Department {
     void addCourse(Course course);
     void addStudent(Student student);
     void addFaculty(Faculty faculty);
-    void addChairperson(Chairperson chairperson);
+    void addChairperson(Faculty chairperson);
+    String getTitle();
 }

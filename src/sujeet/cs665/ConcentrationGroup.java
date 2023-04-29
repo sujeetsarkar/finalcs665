@@ -2,6 +2,7 @@ package sujeet.cs665;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 
 public class ConcentrationGroup implements Concentration, Course {
@@ -25,7 +26,7 @@ public class ConcentrationGroup implements Concentration, Course {
         concentrations.remove(concentration);
     }
 
-    public String getName() {
+    public String getTitle() {
         return name;
     }
 
@@ -68,4 +69,7 @@ public class ConcentrationGroup implements Concentration, Course {
         }
         return result;
 	}
+    public int getMaxEnrollmentLimit() {
+    	throw new NoSuchElementException();
+    }
 }

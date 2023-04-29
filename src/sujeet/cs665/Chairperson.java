@@ -21,12 +21,13 @@ public class Chairperson extends Faculty {
         partTimeFaculty = new ArrayList<>();
     }
 
-    public void addCourse(Course course) {
+    public void addCourseTaught(Course course) {
         coursesOffered.add(course);
+        System.out.println("Faculty");
     }
 
     public void addConcentration(ConcentrationGroup concentration) {
-        concentrations.put(concentration.getName(), concentration);
+        concentrations.put(concentration.getTitle(), concentration);
     }
 
     public void addFullTimeFaculty(Faculty faculty) {

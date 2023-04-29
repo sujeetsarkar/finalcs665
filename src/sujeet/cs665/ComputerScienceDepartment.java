@@ -12,7 +12,7 @@ public class ComputerScienceDepartment implements Concentration, Department {
     private List<Course> coursesOffered;
     private List<Student> students;
     private List<Faculty> faculty;
-    private Chairperson chairperson;
+    private Faculty chairperson;
     private GraduateAdvisor gradAdvisor;
     private UndergraduateAdvisor undergradAdvisor;
     private List<Observer> observers = new ArrayList<>();
@@ -38,12 +38,13 @@ public class ComputerScienceDepartment implements Concentration, Department {
         return faculty;
     }
     
-    public Chairperson getChairperson() {
+    public Faculty getChairperson() {
     	return chairperson;
     }
     
-    public void addChairperson(Chairperson chairperson) {
+    public void addChairperson(Faculty chairperson) {
     	this.chairperson = chairperson;
+    	System.out.println("Chairperson " + chairperson.getName() + " added to department " + chairperson.getDepartment().getTitle());
     }
 
     public static Department getInstance() {
@@ -69,6 +70,7 @@ public class ComputerScienceDepartment implements Concentration, Department {
         } else if (faculty instanceof UndergraduateAdvisor) {
             undergradAdvisor = (UndergraduateAdvisor) faculty;
         }
+        System.out.println("Faculty" + faculty.getName()  + " added to " + faculty.getDepartment().getTitle());
         notifyObservers();
     }
     
@@ -97,7 +99,7 @@ public class ComputerScienceDepartment implements Concentration, Department {
         concentrations.remove(concentration);
     }
 
-    public String getName() {
+    public String getTitle() {
         return name;
     }
 

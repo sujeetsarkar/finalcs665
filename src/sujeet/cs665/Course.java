@@ -12,5 +12,7 @@ public interface Course {
     String getDescription();
     String getSyllabus();
     String getFormattedContent();
+    String getTitle();
+    int getMaxEnrollmentLimit();
 }
 

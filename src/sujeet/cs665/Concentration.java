@@ -1,7 +1,7 @@
 package sujeet.cs665;
 
 public interface Concentration {
-	String getName();
+	String getTitle();
 	String getDescription();
     String format();
 }

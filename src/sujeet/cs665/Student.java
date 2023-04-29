@@ -17,7 +17,9 @@ class Student implements Observer {
     }
     
     public void enrollCourse(Course course) {
+    	CourseProxy courseProxy = new CourseProxy(course.getTitle(), course.getDescription(), course.getSyllabus(), course.getMaxEnrollmentLimit());
         coursesEnrolled.add(course);
+        courseProxy.enrollStudent(this);
         department.notifyObservers();
     }
     

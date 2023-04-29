@@ -15,8 +15,17 @@ public class Faculty implements Observer {
         department.registerObserver(this);
     }
     
+    public String getName() {
+    	return name;
+    }
+    
+    public Department getDepartment() {
+    	return department;
+    }
+    
     public void addCourseTaught(Course course) {
         coursesTaught.add(course);
+        System.out.println("Faculty");
         department.notifyObservers();
     }
     

@@ -13,7 +13,7 @@ public class ConcreteCourse implements Concentration, Course {
         this.maxEnrollmentLimit = maxEnrollmentLimit;
     }
 
-    public String getName() {
+    public String getTitle() {
         return title;
     }
 
@@ -36,4 +36,7 @@ public class ConcreteCourse implements Concentration, Course {
 		// TODO Auto-generated method stub
 		return null;
 	}
+    public int getMaxEnrollmentLimit() {
+    	return maxEnrollmentLimit;
+    }
 }
