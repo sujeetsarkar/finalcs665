@@ -14,7 +14,6 @@ public class CoreCourse extends ConcreteCourse {
 
     public String getFormat() {
 		return null;
-        // implementation for formatting a core course
     }
 }
 

@@ -91,7 +91,6 @@ public class ComputerScienceDepartment implements Concentration, Department {
             undergradAdvisor = (UndergraduateAdvisor) faculty;
             System.out.println(faculty.getName() + " added as UndergraduateAdvisor.");
         }
-//        notifyObservers();
     }
     
     @Override
@@ -127,7 +126,7 @@ public class ComputerScienceDepartment implements Concentration, Department {
         return description;
     }
     public String format() {
-        String result = "<h1>" + name + "</h1>" + "<p>" + description + "</p>";
+        String result = name + description;
         for (Concentration concentration : concentrations) {
             result += concentration.format();
         }

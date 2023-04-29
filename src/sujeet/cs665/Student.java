@@ -26,14 +26,6 @@ class Student implements Observer {
     @Override
     public void update(String message) {
 		System.out.println(message);
-        // Check for updates related to courses enrolled
-//        List<Course> updatedCourses = new ArrayList<>();
-//        for (Course course : coursesEnrolled) {
-//            if (department.getCoursesOffered().contains(course)) {
-//                updatedCourses.add(course);
-//            }
-//        }
-//        coursesEnrolled = updatedCourses;
     }
 
 	/**

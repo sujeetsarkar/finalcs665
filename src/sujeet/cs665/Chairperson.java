@@ -20,10 +20,6 @@ public class Chairperson extends Faculty {
 
 	@Override
 	public void update(String message) {
-//		List<Course> updatedCourses = new ArrayList<>();
-//        for (Course course : this.coursesTaught) {
-//        	
-//        }
 		System.out.println(message);
 	}
 }

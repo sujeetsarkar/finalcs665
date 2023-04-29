@@ -45,7 +45,6 @@ public class CourseProxy implements Course, Observer {
 			studentsEnrolled.add(nextStudent);
 			System.out.println(
 					nextStudent.getName() + " has been automatically enrolled from the waitlist in " + title + ".");
-//			notifyChairperson();
 			notifyMsg = nextStudent.getName() + " has been automatically enrolled from the waitlist in " + title + ".";
 		}
 	}
@@ -62,7 +61,6 @@ public class CourseProxy implements Course, Observer {
 
     @Override
     public String getFormattedContent() {
-        // lazy initialization of formattedContent
         if (formattedContent == null) {
             formattedContent = course.getFormattedContent();
         }
@@ -77,10 +75,6 @@ public class CourseProxy implements Course, Observer {
     }
 	@Override
 	public void update(String message) {
-//		List<Course> updatedCourses = new ArrayList<>();
-//        for (Course course : this.coursesTaught) {
-//        	
-//        }
 		System.out.println(message);
 		
 	}

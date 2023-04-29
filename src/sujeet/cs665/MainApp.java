@@ -72,22 +72,6 @@ public class MainApp {
         student1.enrollCourse(course1);
         student1.enrollCourse(course1);
         student1.enrollCourse(course1);
-        student1.enrollCourse(course1);
-        student1.enrollCourse(course1);
-        // The chairperson should not be notified because the enrollment limit has not been reached
-
-        // Enroll more students in the course until the enrollment limit is reached
-        // The chairperson should be notified because the enrollment limit has been reached
-
-        // Waitlist a student for the course
-//        Student student3 = new Student("Bob Smith", "bs789", csDepartment);
-//        csDepartment.addStudent(student3);
-//        student3.waitlistForCourse(course1);
-
-        // Drop a student from the course
-//        student1.dropCourse(course1);
-        // The waitlisted student should be enrolled in the course
-        // The chairperson should not be notified because the enrollment limit has not been reached
 	}
 
 }

@@ -30,11 +30,9 @@ public class ConcreteCourse implements Concentration, Course {
     public String getSyllabus() {
         return syllabus;
     }
-
-//    public abstract String getFormat();
     
     public String getFormattedContent() {
-        return "<h3>" + title + "</h3>" + "<p>" + description + "</p>" + "<p>" + syllabus + "</p>";
+        return title + description + syllabus;
     }
 
 	@Override

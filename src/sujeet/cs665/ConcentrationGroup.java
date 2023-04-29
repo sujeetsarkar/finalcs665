@@ -54,7 +54,7 @@ public class ConcentrationGroup implements Concentration, Course {
 	}
 
     public String format() {
-        String result = "<h2>" + name + "</h2>" + "<p>" + description + "</p>";
+        String result = name + description;
         for (Concentration concentration : concentrations) {
             result += concentration.format();
         }
@@ -69,7 +69,7 @@ public class ConcentrationGroup implements Concentration, Course {
 
 	@Override
 	public String getFormattedContent() {
-		String result = "<h2>" + name + "</h2>" + "<p>" + description + "</p>";
+		String result =  name + description;
         for (Concentration concentration : concentrations) {
             result += concentration.format();
         }
